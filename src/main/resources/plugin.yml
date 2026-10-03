@@ -1,0 +1,8 @@
+name: vAuction
+description: $description
+version: '${version}'
+
+main: io.github.vitordalvi.vAuction.AuctionPlugin
+api-version: '1.21'
+
+authors: [ vitordalvi ]
