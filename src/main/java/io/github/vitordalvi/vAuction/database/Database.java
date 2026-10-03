@@ -18,7 +18,7 @@ public abstract class Database {
     public abstract void connect() throws SQLException;
     public abstract void disconnect() throws SQLException;
 
-    public Connection getConnection() {
+    public Connection getConnection() throws SQLException {
         return connection;
     }
 
