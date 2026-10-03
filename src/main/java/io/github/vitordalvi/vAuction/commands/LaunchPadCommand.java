@@ -35,13 +35,13 @@ public class LaunchPadCommand extends Command {
         Player player = (Player) sender;
 
         if (args.length == 0) {
-            player.sendMessage("§a§l    LAUNCHPAD | COMANDOS\n");
-            player.sendMessage("§7 - §e/launchpad ver §7- §fCheck current material");
+            player.sendMessage("§a§l    LAUNCHPAD | COMMANDS\n");
+            player.sendMessage("§7 - §e/launchpad see §7- §fCheck current material");
             player.sendMessage("§7 - §e/launchpad <material> §7- §fChange the LaunchPad material");
             return true;
         }
 
-        if (args[0].equalsIgnoreCase("ver") && args.length < 2) {
+        if (args[0].equalsIgnoreCase("see") && args.length < 2) {
             player.sendMessage("§7LaunchPad current material is: §e" + launchPadMaterial.name());
             return true;
         }
@@ -80,8 +80,8 @@ public class LaunchPadCommand extends Command {
         if (args.length == 1) {
             String typed = args[0].toUpperCase();
 
-            if ("VER".startsWith(typed)) {
-                suggestions.add("ver");
+            if ("SEE".startsWith(typed)) {
+                suggestions.add("see");
             }
 
             for (Material material : Material.values()) {
