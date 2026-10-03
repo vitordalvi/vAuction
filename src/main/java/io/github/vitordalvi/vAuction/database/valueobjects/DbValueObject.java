@@ -1,4 +1,5 @@
 package io.github.vitordalvi.vAuction.database.valueobjects;
 
-public class DbValueObject {
+public class DbValueObject 
+{
 }
