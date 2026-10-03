@@ -1,25 +1,33 @@
 package io.github.vitordalvi.vAuction.database;
 
 import io.github.vitordalvi.vAuction.database.enums.SGBDType;
+import io.github.vitordalvi.vAuction.database.valueobjects.DbCredentialsVO;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public abstract class Database {
 
-    private final SGBDType sgbd;
-    private final String DB_ADDRESS;
-    private final String DB_PORT;
-    private final String DB_NAME;
-    private final String DB_USERNAME;
-    private final String DB_PASSWORD;
+    protected final DbCredentialsVO credentials;
+    protected Connection connection;
 
-    public Database(SGBDType sgbd, String DB_ADDRESS, String DB_PORT, String DB_NAME, String DB_USERNAME, String DB_PASSWORD) {
-        this.sgbd = sgbd;
-        this.DB_ADDRESS = DB_ADDRESS;
-        this.DB_PORT = DB_PORT;
-        this.DB_NAME = DB_NAME;
-        this.DB_USERNAME = DB_USERNAME;
-        this.DB_PASSWORD = DB_PASSWORD;
+    public Database(DbCredentialsVO credentials) {
+        this.credentials = credentials;
     }
 
-    public abstract void connect();
+    public abstract void connect() throws SQLException;
+    public abstract void disconnect() throws SQLException;
+
+    public Connection getConnection() {
+        return connection;
+    }
+
+    public boolean isConnected() {
+        try {
+            return connection != null && !connection.isClosed();
+        } catch (Exception ex) {
+            return false;
+        }
+    }
 
 }
