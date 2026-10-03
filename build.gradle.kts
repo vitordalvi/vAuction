@@ -18,6 +18,7 @@ repositories {
 dependencies {
     paperweight.paperDevBundle("1.21.11-R0.1-SNAPSHOT")
     implementation("com.zaxxer:HikariCP:6.2.1")
+    runtimeOnly("com.mysql:mysql-connector-j:8.4.0")
 }
 
 java {
