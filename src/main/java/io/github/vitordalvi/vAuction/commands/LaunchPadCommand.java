@@ -1,7 +1,6 @@
 package io.github.vitordalvi.vAuction.commands;
 
 import io.github.vitordalvi.vAuction.AuctionPlugin;
-import io.github.vitordalvi.vAuction.config.ConfigLoader;
 import io.github.vitordalvi.vAuction.config.features.LaunchPadConfig;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
