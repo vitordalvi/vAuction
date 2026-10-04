@@ -7,15 +7,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public abstract class Database {
-
-    protected final AuctionPlugin plugin;
-    
     protected final DbCredentialsVO credentials;
     protected Connection connection;
 
-    public Database(DbCredentialsVO credentials, AuctionPlugin plugin) {
+    public Database(DbCredentialsVO credentials) {
         this.credentials = credentials;
-        this.plugin = plugin;
     }
 
     public abstract void connect() throws SQLException;

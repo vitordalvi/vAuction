@@ -12,6 +12,25 @@ public record DbCredentialsVO(String address,
                               String username,
                               String password) {
 
+    public DbCredentialsVO {
+        if (address == null || address.isBlank()) {
+            throw new IllegalArgumentException("Database address cannot be null or blank");
+        }
+        if (port == null || port.isBlank()) {
+            throw new IllegalArgumentException("Database port cannot be null or blank");
+        }
+        if (database == null || database.isBlank()) {
+            throw new IllegalArgumentException("Database name cannot be null or blank");
+        }
+        if (username == null || username.isBlank()) {
+            throw new IllegalArgumentException("Database username cannot be null or blank");
+        }
+        if (password == null || password.isBlank()) {
+            throw new IllegalArgumentException("Database password cannot be null or blank");
+        }
+    }
+
+
     public String getJdbcUrl(SGBDType sgbd) {
         switch (sgbd) {
             case MYSQL, HIKARI -> {

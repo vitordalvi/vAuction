@@ -15,7 +15,7 @@ public final class AuctionPlugin extends JavaPlugin {
         getLogger().info("§a vAuction has been started!");
 
         Manager manager = new Manager(getInstance());
-        manager.load();
+        manager.loadConfigs();
 
         getServer().getPluginManager().registerEvents(new LaunchPadEventListener(
                 this, manager.getLaunchPadConfig()), this);
