@@ -1,9 +1,9 @@
 package io.github.vitordalvi.vAuction;
 
 import io.github.vitordalvi.vAuction.commands.LaunchPadCommand;
-import io.github.vitordalvi.vAuction.config.FileUtils;
+import io.github.vitordalvi.vAuction.config.ConfigLoader;
+import io.github.vitordalvi.vAuction.config.features.LaunchPadConfig;
 import io.github.vitordalvi.vAuction.listeners.LaunchPadEventListener;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -15,13 +15,19 @@ public final class AuctionPlugin extends JavaPlugin {
     public void onEnable() {
         getLogger().info("§a vAuction has been started!");
 
-        this.getServer().getPluginManager().registerEvents(new LaunchPadEventListener(
-                this, FileUtils.getInstance()), this);
+        ConfigLoader configLoader = new ConfigLoader(this);
+        configLoader.load();
+
+        LaunchPadConfig launchPadConfig = new LaunchPadConfig();
+        launchPadConfig.loadConfig();
+
+        getServer().getPluginManager().registerEvents(new LaunchPadEventListener(
+                this, launchPadConfig), this);
 
         getServer().getCommandMap().register("vauction", new LaunchPadCommand(this,
-                FileUtils.getInstance()));
+                launchPadConfig));
 
-        FileUtils.getInstance().load();
+        ConfigLoader.getInstance().load();
     }
 
     @Override

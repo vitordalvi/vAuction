@@ -1,6 +1,6 @@
 package io.github.vitordalvi.vAuction.listeners;
 
-import io.github.vitordalvi.vAuction.config.FileUtils;
+import io.github.vitordalvi.vAuction.config.features.LaunchPadConfig;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -13,16 +13,16 @@ import org.bukkit.plugin.Plugin;
 public class LaunchPadEventListener implements Listener {
 
     private final Plugin plugin;
-    private final FileUtils config;
+    private final LaunchPadConfig config;
 
-    public LaunchPadEventListener(Plugin plugin, FileUtils config) {
+    public LaunchPadEventListener(Plugin plugin, LaunchPadConfig config) {
         this.plugin = plugin;
         this.config = config;
     }
 
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent event) {
-        Material launchPadBlock = config.getLaunchpadMaterial();
+        Material launchPadBlock = config.getLaunchPadMaterial();
 
         if (event.getFrom().getBlockX() == event.getTo().getBlockX() &&
         event.getFrom().getBlockZ() == event.getTo().getBlockZ() &&

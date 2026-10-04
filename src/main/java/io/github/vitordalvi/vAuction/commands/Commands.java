@@ -1,7 +1,7 @@
 package io.github.vitordalvi.vAuction.commands;
 
 import io.github.vitordalvi.vAuction.AuctionPlugin;
-import io.github.vitordalvi.vAuction.config.FileUtils;
+import io.github.vitordalvi.vAuction.config.features.LaunchPadConfig;
 import org.bukkit.command.Command;
 
 public class Commands {
@@ -13,7 +13,7 @@ public class Commands {
     }
 
     public void registerAll() {
-        registerCommand(new LaunchPadCommand(plugin, FileUtils.getInstance()));
+        registerCommand(new LaunchPadCommand(plugin, LaunchPadConfig.getInstance()));
 
     }
 

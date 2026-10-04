@@ -1,7 +1,8 @@
 package io.github.vitordalvi.vAuction.commands;
 
 import io.github.vitordalvi.vAuction.AuctionPlugin;
-import io.github.vitordalvi.vAuction.config.FileUtils;
+import io.github.vitordalvi.vAuction.config.ConfigLoader;
+import io.github.vitordalvi.vAuction.config.features.LaunchPadConfig;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -11,11 +12,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LaunchPadCommand extends Command {
+public class  LaunchPadCommand extends Command {
     private final AuctionPlugin plugin;
-    private final FileUtils config;
+    private final LaunchPadConfig config;
 
-    public LaunchPadCommand(AuctionPlugin plugin, FileUtils config) {
+    public LaunchPadCommand(AuctionPlugin plugin, LaunchPadConfig config) {
         super("launchpad",
                 "LaunchPad commands",
                 "/launchpad",
@@ -31,7 +32,7 @@ public class LaunchPadCommand extends Command {
             return true;
         }
 
-        Material launchPadMaterial = config.getLaunchpadMaterial();
+        Material launchPadMaterial = config.getLaunchPadMaterial();
         Player player = (Player) sender;
 
         if (args.length == 0) {
