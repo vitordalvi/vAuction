@@ -17,6 +17,10 @@ public class Manager {
         this.databaseConfig = new DbConfig(this.configLoader);
     }
 
+    public void loadData() {
+
+    }
+
     public void loadConfigs() {
         configLoader.load();
         launchPadConfig.load();
