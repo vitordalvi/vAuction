@@ -2,6 +2,7 @@ package io.github.vitordalvi.vAuction.database;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import io.github.vitordalvi.vAuction.AuctionPlugin;
 import io.github.vitordalvi.vAuction.database.enums.SGBDType;
 import io.github.vitordalvi.vAuction.database.valueobjects.DbCredentialsVO;
 
@@ -9,10 +10,12 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class HikariDatabase extends Database {
+
     private HikariDataSource dataSource;
 
-    public HikariDatabase(DbCredentialsVO credentials) {
-        super(credentials);
+
+    public HikariDatabase(DbCredentialsVO credentials, AuctionPlugin plugin) {
+        super(credentials, plugin);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package io.github.vitordalvi.vAuction.database;
 
-import io.github.vitordalvi.vAuction.database.enums.SGBDType;
+import io.github.vitordalvi.vAuction.AuctionPlugin;
 import io.github.vitordalvi.vAuction.database.valueobjects.DbCredentialsVO;
 
 import java.sql.Connection;
@@ -8,11 +8,14 @@ import java.sql.SQLException;
 
 public abstract class Database {
 
+    protected final AuctionPlugin plugin;
+    
     protected final DbCredentialsVO credentials;
     protected Connection connection;
 
-    public Database(DbCredentialsVO credentials) {
+    public Database(DbCredentialsVO credentials, AuctionPlugin plugin) {
         this.credentials = credentials;
+        this.plugin = plugin;
     }
 
     public abstract void connect() throws SQLException;
@@ -29,5 +32,4 @@ public abstract class Database {
             return false;
         }
     }
-
 }

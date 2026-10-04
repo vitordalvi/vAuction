@@ -7,14 +7,12 @@ import java.io.File;
 
 public class ConfigLoader {
 
-    private static ConfigLoader instance;
     private final Plugin plugin;
     private File file;
     private YamlConfiguration config;
 
     public ConfigLoader(Plugin plugin) {
         this.plugin = plugin;
-        instance = this;
     }
 
     public void load() {
@@ -50,9 +48,5 @@ public class ConfigLoader {
 
     public YamlConfiguration getConfig() {
         return config;
-    }
-
-    public static ConfigLoader getInstance() {
-        return instance;
     }
 }

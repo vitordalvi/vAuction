@@ -6,15 +6,15 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 public class LaunchPadConfig {
 
-    private static LaunchPadConfig instance;
+    private final ConfigLoader configLoader;
     private Material launchPadMaterial;
 
-    public LaunchPadConfig() {
-        instance = this;
+    public LaunchPadConfig(ConfigLoader configLoader) {
+        this.configLoader = configLoader;
     }
 
-    public void loadConfig() {
-        YamlConfiguration config = ConfigLoader.getInstance().getConfig();
+    public void load() {
+        YamlConfiguration config = configLoader.getConfig();
 
         String materialName = config.getString("launchpad.material", "IRON_BLOCK");
 
@@ -36,10 +36,6 @@ public class LaunchPadConfig {
     public void setLaunchPadMaterial(Material material) {
         this.launchPadMaterial = material;
 
-        ConfigLoader.getInstance().set("launchpad.material", material.name());
-    }
-
-    public static LaunchPadConfig getInstance() {
-        return instance;
+        configLoader.set("launchpad.material", material.name());
     }
 }

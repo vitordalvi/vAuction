@@ -13,7 +13,7 @@ public class Commands {
     }
 
     public void registerAll() {
-        registerCommand(new LaunchPadCommand(plugin, LaunchPadConfig.getInstance()));
+        registerCommand(new LaunchPadCommand(plugin, plugin.getManager().getLaunchPadConfig()));
 
     }
 
