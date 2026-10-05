@@ -1,6 +1,5 @@
-package io.github.vitordalvi.vAuction.features.auction;
+package io.github.vitordalvi.vAuction.features.auction.entities;
 
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 

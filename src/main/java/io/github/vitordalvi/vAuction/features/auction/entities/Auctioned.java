@@ -1,4 +1,4 @@
-package io.github.vitordalvi.vAuction.features.auction;
+package io.github.vitordalvi.vAuction.features.auction.entities;
 
 import io.github.vitordalvi.vAuction.features.auction.enums.AuctionedItemStatus;
 import io.github.vitordalvi.vAuction.features.auction.exceptions.BidLowerPriceException;
