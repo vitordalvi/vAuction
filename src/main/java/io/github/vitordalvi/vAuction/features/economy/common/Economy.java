@@ -20,7 +20,7 @@ public abstract class Economy {
 
     public void setAmount(Double amount) {
         if (amount == null || amount < 0) {
-            throw new EconomyException("Amount cannot be negative.");
+            throw new EconomyException("Amount is not valid.");
         }
 
         this.amount = amount;
