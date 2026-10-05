@@ -1,10 +1,8 @@
-package io.github.vitordalvi.vAuction.database.valueobjects;
+package io.github.vitordalvi.vAuction.database.common.valueobjects;
 
-import io.github.vitordalvi.vAuction.database.enums.SGBDType;
-import io.github.vitordalvi.vAuction.database.exceptions.DatabaseException;
+import io.github.vitordalvi.vAuction.database.common.enums.SGBDType;
+import io.github.vitordalvi.vAuction.database.common.exceptions.DatabaseException;
 import org.apache.commons.lang3.NotImplementedException;
-
-import java.util.Objects;
 
 public record DbCredentialsVO(String address,
                               String port,

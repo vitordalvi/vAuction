@@ -1,8 +1,8 @@
 package io.github.vitordalvi.vAuction.config.features;
 
 import io.github.vitordalvi.vAuction.config.ConfigLoader;
-import io.github.vitordalvi.vAuction.database.enums.SGBDType;
-import io.github.vitordalvi.vAuction.database.valueobjects.DbCredentialsVO;
+import io.github.vitordalvi.vAuction.database.common.enums.SGBDType;
+import io.github.vitordalvi.vAuction.database.common.valueobjects.DbCredentialsVO;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 public class DbConfig {

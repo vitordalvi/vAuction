@@ -1,4 +1,4 @@
-package io.github.vitordalvi.vAuction.database.enums;
+package io.github.vitordalvi.vAuction.database.common.enums;
 
 public enum SGBDType {
     MYSQL,
